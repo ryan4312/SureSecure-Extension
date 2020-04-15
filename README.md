@@ -18,21 +18,21 @@ Firefox Browser
 
 A step by step series of examples that tell you how to get a development env running
 
-Download the repository
+Obtain a local copy of the code
 
 ```
-Give the example
+Download the repository from github (https://github.com/ryan4312/SureSecure-Extension)
 ```
 
 Add it to Firefox
 
 ```
-Open Firefox
-go to about:debugging
-Select This Firefox
-Under Temporary Extensions select Load Temporary Add-on...
-Browser for the repository downloaded earlier
-select manifest.json
+-Open Firefox
+-go to about:debugging
+-Select This Firefox
+-Under Temporary Extensions select Load Temporary Add-on...
+-Browser for the repository downloaded earlier
+-select manifest.json
 ```
 
 The extension should now be running in your Firefox instance
