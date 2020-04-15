@@ -49,6 +49,7 @@ The extension should now be running in your Firefox instance
 
 * [Antu](https://github.com/fabianalexisinostroza/Antu) - Icon provided by Fabián Alexis
 * [Google Pacifico](https://fonts.google.com/specimen/Pacifico) - Google Pacifico Fonts
+* [Font Awesome](https://fontawesome.com/) - Font Awesome Icons
 
 
 ## Authors
