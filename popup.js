@@ -32,9 +32,13 @@ Listeners
  function changeVis(){															//Changes the visibility of the output div (hides it)
 	 
   if (document.getElementById('output').style.display === "none") {
-				document.getElementById('output').style.display = "block";
+				document.getElementById('output').style.display = "block";			//Hide the section
+				document.getElementById('changeButton').innerHTML="Hide Output"		//Change the button to "hide output"
+				
 			} else {
-				document.getElementById('output').style.display = "none";
+				document.getElementById('output').style.display = "none";			//Reveal the section
+				document.getElementById('changeButton').innerHTML="Show Output"		//Change the button to "show output"
+				
 			}
  }
  
