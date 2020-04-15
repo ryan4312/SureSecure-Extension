@@ -37,11 +37,11 @@ Add it to Firefox
 
 The extension should now be running in your Firefox instance
 ```
-Try it out!
-Visit some site with a sign in page
-Select the extension icon from the toolbar
-Select your credentials
-Watch as they are entered into the page
+-Try it out!
+-Visit some site with a sign in page
+-Select the extension icon from the toolbar
+-Select your credentials
+-Watch as they are entered into the page
 ```
 
 
@@ -53,7 +53,7 @@ Watch as they are entered into the page
 
 ## Authors
 
-* **Ryan Frisch**  - [PurpleBooth](https://github.com/ryan4312)
+* **Ryan Frisch**  - [Github](https://github.com/ryan4312)
 
 ## License
 
