@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SureSecure</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Link the stylesheets so we can use their icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">		
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #3b5998;
+  padding: 5px 5px;
+}
+
+/* Style the top navigation image */
+.topnav img {
+	float: left;
+	width: 60px;
+	height: 60px;
+}
+
+.topnav h1 {
+	position: relative;
+	top: -8px;
+
+	font-family: 'Pacifico', cursive;
+	font-size:40px;
+	color:#FFFFFF
+}
+
+.topnav2 {
+ overflow: hidden;
+  background-color: #3b5998;
+  padding: 0px 5px 5px;
+}
+
+/* Style the content */
+.content {
+  background-color: #edf0f5;
+  padding: 10px;
+  
+}
+
+/* Style the footer */
+.footer {
+  background-color: #FFFFFF;
+  padding: 10px;
+}
+
+.loginButton{
+	background-color: #4267b2;
+	border-color: #29487d;
+	border-radius: 2px;
+	color: #FFFFFF;
+}
+</style>
+			
+
+</head>
+<body>
+
+<div class="topnav">
+	<img src="/icons/unlocked.svg">
+	<h1>SureSecure</h1>
+</div>
+<div class="topnav2">
+  <button id="changeButton"> Hide Output</button>
+  
+  <div style="float:right;color:#FFFFFF">
+  Server:
+  <input type="text" id="server" style="color:#000000; width:200px;" >
+</div>
+</div>
+
+
+<div class="content">
+    <!-- Output used for the websocket output -->
+	<div id = "output"></div> 
+</div>
+
+<div class="footer">
+	<p style="text-decoration: underline"> Please choose an account to send:</p>
+    <!-- Populates the selector -->
+	<!-- The Select is populated by the available credentials for the current tab's URL-->
+    <select id="pairs"></select>
+  
+  	<!-- We can change the visibilty, as these items are technically not necessary anymore -->
+	<!-- Instead we can use the eventListener for change on the pairs selector -->
+	<!-- That calls Func2() which then fills the username/pass fields (which we technically still need at the moment) -->
+	<!-- Unfortunately, I dont have a way to get rid of the set value button YET. -->
+	<input type="text" id="username"  placeholder="username" style="visibility: visible">
+	<input type="password" id="pass"  placeholder="pass" style="visibility: visible">
+	<i id="passVis" class="fa fa-eye-slash"> </i>
+	<button id="buttonSet" class="loginButton">Set Value</button> 
+
+</div>
+
+</body>
+<script type="text/javascript" src="popup.js"></script>
+</html>
