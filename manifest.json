@@ -7,28 +7,35 @@
            "48": "icons/unlocked.svg"
            },
  "permissions": [
-                 "activeTab",
-				 "tabs", 
-				 "<all_urls>",
-				 "contextMenus",
-				 "menus",
-				 "storage",
-				 "tcp-socket"
+				"storage",
+                "activeTab",
+				"tabs", 
+				"<all_urls>",
+				"contextMenus",
+				"menus"			
                 ],
 "browser_action": {
 "default_icon": "icons/unlocked.svg",
 "default_popup": "popup.html"
                   },
-				  
+"options_ui": {
+    "page": "options.html"
+  },				  
 "background": {
 		"scripts": [
 			"background/contextmenu.js"
 		]
 	},
+	
 "content_scripts": [
                       {
                        "matches": ["<all_urls>"],
                        "js": ["contentscript.js"]
                       }
-                    ]
+                    ],
+"applications": {
+    "gecko": {
+      "id": "rfrisch@albany.edu"
+    }
+  }
  }

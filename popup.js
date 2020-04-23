@@ -1,5 +1,6 @@
 window.onload=function(){
-	document.getElementById('server').value = "wss://echo.websocket.org/";
+	//document.getElementById('server').value = "wss://echo.websocket.org/";
+	
 
 //Listener for the set button to send those values to the contentscript.js
  document.getElementById('buttonSet').addEventListener('click',function(){
@@ -27,7 +28,7 @@ Listeners
  document.getElementById('server').addEventListener('change',changeServer);		//When the server text box changes, disconnect and reconnect to the new server.
  document.getElementById('changeButton').addEventListener('click',changeVis);	//When the 'change me' button is clicked, run this function. (hides the output)
  document.getElementById('passVis').addEventListener('click',passVis);			//When the password visibility icon is clicked, run this function (change the icon, cleartext the pw)
-  
+ 
   
  function changeVis(){															//Changes the visibility of the output div (hides it)
 	 
@@ -53,6 +54,29 @@ Listeners
       }
  }
  
+ //This part handles the options
+  function onError(error) {
+  console.log(`Error: ${error}`);
+}
+
+function onGot(item) {
+  
+  if (item.server) {
+	var server = item.server 
+	document.getElementById('server').value = server;
+	testWebSocket(server);
+  }
+  
+}
+
+let getting = browser.storage.sync.get("server");
+getting.then(onGot, onError);
+ 
+ 
+ //
+ 
+ 
+ 
  
  ///////////////////////////////////////////////////////////////////////////////////////
  ///						Below is all the Websock Stuff							 ///
@@ -69,7 +93,7 @@ Listeners
 		
       function init() {
          output = document.getElementById("output");
-         testWebSocket(wsUri);
+         //testWebSocket(wsUri);
       }
 		
       function testWebSocket(server) {
@@ -203,7 +227,7 @@ Listeners
       }
 
       function onError(evt) {
-         writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+         writeToScreen('<span style="color: red;">ERROR: </span>unable to connect ');
       }
 		
       function doSend(message) {
@@ -298,6 +322,11 @@ Listeners
 	testWebSocket(connectTo);									//reconnect to the server
 
  }
+		
+		
+
+		
+		
 		
 		
 /*

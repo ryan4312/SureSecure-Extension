@@ -2,7 +2,7 @@
 browser.runtime.onMessage.addListener(function(request, sender,   sendResponse) { 
       
 
-	 const usernameElements = document.querySelectorAll(`input[type="text"]`);			//Get all of the text input fields to enter username into
+	 const usernameElements = document.querySelectorAll(`input[type="text"], input[type="email"]`);			//Get all of the text input fields to enter username into
 	 const passwordElements = document.querySelectorAll(`input[type="password"]`);		//Get all of the password input fields to enter password into
 
 	 usernameElements.forEach(username => username.value = request.user);				//For each of those, input the value as passed from popup.js
@@ -11,3 +11,14 @@ browser.runtime.onMessage.addListener(function(request, sender,   sendResponse) 
 
 
 
+
+var clickedEl = null;
+document.addEventListener("mousedown", function (event) {
+  //right click
+  if (event.button == 2) {
+    clickedEl = event.target;
+  }
+}, true);
+browser.runtime.onMessage.addListener(function (request) {
+  clickedEl.value = request.text;
+});
