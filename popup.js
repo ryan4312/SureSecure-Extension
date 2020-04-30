@@ -124,19 +124,10 @@ getting.then(onGot, onError);
          //writeToScreen("CONNECTED");
 		 var pairs = [];			//Array to hold the objects, used for both part 1 and 2. Wont send properly formated JSON otherwise.
 		 
-		 ////////////////////////////////////////////////////////////////////////////////////////////////
-		 ///												1											/
-		 ////////////////////////////////////////////////////////////////////////////////////////////////
-		 /*
-		 Part 1 contains code to send the current url to the web socket server.
-		 
-		 Will be commented out until its time to connect to the web socket on the application
-		 */
-		 
-		 /*
-		
-		 
 		 var domain
+		 	var obj ={										//We have to create the object
+			url: "something"
+		}
 		 
 		 //This part determines what the base url is and stores it in Domain
 		 browser.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -144,55 +135,16 @@ getting.then(onGot, onError);
 			var url = new URL(tab.url)
 			domain = url.hostname
 			// `domain` now has a value like 'example.com'
+			alert(domain);
+			obj.url=domain;
+			pairs.push(obj);								//Add it to pairs (otherwise it wont send correct JSON)
+			doSend(JSON.stringify(pairs));					//Send it
+			
 		})
 		
-		alert("got this far" + domain);					//for testing
-		var obj ={										//We have to create the object
-			url: "something"
-		}
-		obj.url = domain;								//Set the url to be the domain obtained earlier	
-		pairs.push(obj);								//Add it to pairs (otherwise it wont send correct JSON)
-		doSend(JSON.stringify(pairs));					//Send it
-		
-		 */   //End Part 1
-		
-		
-		
-		
-		
-		////////////////////////////////////////////////////////////////////////////////////////////////
-		///*												2										   /	
-		////////////////////////////////////////////////////////////////////////////////////////////////
-		 /*
-		 The stuff below this is for local testing of sending username/password  -- it should be removed
-		 */
 
-		//So now all we have to do is format it in JSON and then send it. 
-
-		//websocket.send(JSON.stringify({
-		//	username: "client2",
-		//	pass: "foo"
-		//}));
-		 
-		//Create a JSON Array and then pass it to doSend
-
-		var obj1 = {
-			username: "name1",
-			pass: "pass1",
-		}
-		var obj2 = {
-			username: "name2",
-			pass: "pass2",
-		}
-		var obj3 = {
-			username: "name3",
-			pass: "pass3",
-		}
-		pairs.push(obj1);
-		pairs.push(obj2);
-		pairs.push(obj3);
 		
-		doSend(JSON.stringify(pairs));
+	
 
       }
 		
