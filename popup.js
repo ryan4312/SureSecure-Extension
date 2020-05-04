@@ -24,7 +24,7 @@ window.onload=function(){
 /*
 Listeners
 */ 
- document.getElementById('pairs').addEventListener('change',Func3);				//When you select an item from the dropdown it runs this function (currently set to immediately pass values to contentscript.js)
+ document.getElementById('pairs').addEventListener('click',Func3);				//When you select an item from the dropdown it runs this function (currently set to immediately pass values to contentscript.js)
  document.getElementById('server').addEventListener('change',changeServer);		//When the server text box changes, disconnect and reconnect to the new server.
  document.getElementById('changeButton').addEventListener('click',changeVis);	//When the 'change me' button is clicked, run this function. (hides the output)
  document.getElementById('passVis').addEventListener('click',passVis);			//When the password visibility icon is clicked, run this function (change the icon, cleartext the pw)
@@ -135,7 +135,6 @@ getting.then(onGot, onError);
 			var url = new URL(tab.url)
 			domain = url.hostname
 			// `domain` now has a value like 'example.com'
-			alert(domain);
 			obj.url=domain;
 			pairs.push(obj);								//Add it to pairs (otherwise it wont send correct JSON)
 			doSend(JSON.stringify(pairs));					//Send it
