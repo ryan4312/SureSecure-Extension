@@ -12,6 +12,7 @@ What things you need to install the software and how to install them
 
 ```
 Firefox Browser
+SureSecure Application running on a physical device connected to the same network as the computer running the extension
 ```
 
 ### Installing
@@ -35,7 +36,18 @@ Add it to Firefox
 -select manifest.json
 ```
 
-The extension should now be running in your Firefox instance
+The extension should now be running in your Firefox instance, but wait theres more!
+Before you can try it out you must connect your extension to your application.
+
+```
+-Enter about:addons in your address bar to bring you to the Manage Extension page
+-Find SureSecure under the Enabled extensions and select it
+-Select the Options tab
+-Follow the instructions to enter the ip address from the application to the default server input.
+```
+
+At this point the extension should be running in your firefox instance, and connected to the application.
+
 ```
 -Try it out!
 -Visit some site with a sign in page
